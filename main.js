@@ -33,7 +33,17 @@ function draw() {
         document.getElementById('volume').innerHTML = "<h3>Volume: " + volume.toFixed(2) + "</h3>"
     }
     if (scoreRight > 0.2) {
-        rate = 1
+        if (rightY > 0 && rightY < 100) {
+            rate = 0.5
+        } else if (rightY > 100 && rightY < 200) {
+            rate = 1
+        } else if (rightY > 200 && rightY < 300) {
+            rate = 1.5
+        } else if (rightY > 300 && rightY < 400) {
+            rate = 2
+        } else if (rightY > 400 && rightY < 500) {
+            rate = 2.5
+        }
         song.rate(rate)
         document.getElementById('speed').innerHTML = "<h3>Speed: " + rate.toFixed(2) + "</h3>"
     }
